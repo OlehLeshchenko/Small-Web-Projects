@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Лещенко</title>
+	<style>
+		legend{
+			text-align: center;
+			font-weight: bold;
+		}
+
+		fieldset{
+			border-radius: 8px;
+			
+		}
+
+		form{
+			width: 40%;
+			margin: auto;
+			background-color: rgb(144 238 144);
+		}
+
+		.buttons{
+			height: 50px;
+			width: 40%;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			margin-left: 150px;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<center><h1>Реєстраційна форма</h1></center>
+		<fieldset>
+			<legend>Дані для авторизації</legend>
+			<p><input type="text" required placeholder="Уведіть логін"></p>
+			<p><input type="password" required placeholder="Уведіть пароль"></p>
+		</fieldset>
+		<fieldset>
+			<legend>Персональні дані</legend>
+			<p><label>Дата народження:</label><input type="date" required ></p>
+			<p><label>Стать:</label><input type="radio" required checked=""> Жіноча
+			<input type="radio"> Чоловіча</p>
+			<p><label>Домашня адреса:</label><textarea cols="10" rows="5" required></textarea></p>
+		</fieldset>
+		<fieldset>
+			<legend>Виберіть гуртки та факультативи</legend>
+			<p><label>Гуртки:</label><input type="checkbox" required>Тетральний
+			<input type="checkbox">Футбол
+			<input type="checkbox">Вокальний</p>
+			<p><label>Факультативи:<select>
+				<option value="">Веб-технології</option>
+				<option value="">Математика</option>
+				<option value="">ІКТ</option>
+				<option value="">Українська мова та література</option>
+			</select></label></p>
+		</fieldset>
+		<div class="buttons">
+			<div><input type="submit" value="Надіслати"></div>
+			<div><input type="reset" value="Очистити"></div>
+		</div>
+	</form>
+</body>
+</html>

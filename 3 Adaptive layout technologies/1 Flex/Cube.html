@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cubes</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.side{
+			height: 104px;
+			width: 104px;
+			border-radius: 10%;
+			background-color: #dbd7d7; 
+			padding: 7px;
+			display: flex;
+			box-sizing: border-box;
+		}
+		.point{
+			height: 24px;
+			width: 24px;
+			border-radius: 50%;
+			background-color: rgb(51 51 51);
+		}
+		.first-side{
+			justify-content: center;
+			align-items: center;
+		}
+		.second-third-side{
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+		.six-fifth-fourth-side{
+			justify-content: space-between;
+		}
+		.column{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 24px;
+		}
+		.column_2{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			width: 24px;
+		}
+		.main{
+			height: 100vh;
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+			align-content: space-around;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<!-- 1 Cube -->
+		<div class="side first-side"> 
+			<div class="point"></div>
+		</div>
+		<!-- 2 Cube -->
+		<div class="side second-third-side">
+			<div class="point"></div>
+			<div class="point" style="align-self: flex-end;"></div>
+		</div>
+		<!-- 3 Cube -->
+		<div class="side second-third-side">
+			<div class="point"></div>
+			<div class="point" style="align-self: center;"></div>
+			<div class="point" style="align-self: flex-end;"></div>
+		</div>
+		<!-- 4 Cube -->
+		<div class="side six-fifth-fourth-side">
+			<div class="column">
+				<div class="point"></div>
+				<div class="point" style="align-self: flex-end;"></div>
+			</div>	
+			<div class="column">
+				<div class="point"></div>
+				<div class="point"></div>
+			</div>		
+		</div>
+		<!-- 5 Cube -->
+		<div class="side six-fifth-fourth-side">
+			<div class="column">
+				<div class="point"></div>
+				<div class="point"></div>
+			</div>	
+			<div class="column_2">
+				<div class="point"></div>
+			</div>
+			<div class="column">
+				<div class="point"></div>
+				<div class="point"></div>
+			</div>		
+		</div>
+		<!-- 6 Cube -->
+		<div class="side six-fifth-fourth-side">
+			<div class="column">
+				<div class="point"></div>
+				<div class="point"></div>
+				<div class="point"></div>
+			</div>	
+			<div class="column">
+				<div class="point"></div>
+				<div class="point"></div>
+				<div class="point"></div>
+			</div>		
+		</div>
+	</div>
+</body>
+</html>

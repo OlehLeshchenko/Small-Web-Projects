@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ялинкова прикраса</title>
+	<style>
+		.wrap{
+			width: 600px;
+			height: 600px;
+			background-color: lightgreen;
+			margin: auto;
+			margin-top: 30px; 
+			position: relative;
+		}
+		.toy{
+			border-radius: 50%;
+			width: 300px;
+			height: 300px;
+			background-image: radial-gradient(at 35% 35%, violet, darkviolet); 
+			margin-top: 226px;
+			margin-left: 160px;
+			position: absolute;
+			z-index: 0;
+
+		}
+		.head{
+			border-radius: 30% 30% 0% 0%;
+			position: absolute;
+			width: 100px;
+			height: 60px;
+			background-image: linear-gradient( to right, #d3dcdf, #869398);
+			margin-top: 175px;
+			margin-left: 260px; 
+			z-index: 1;
+		}
+		.h_header{
+			border-radius: 25px;
+			position: absolute;
+			width: 25px;
+			height: 60px;
+			border: 6px solid #869398;
+			background-color: transparent;
+			z-index: 2;
+			margin-top: 110px;
+			margin-left: 292px; 
+		}
+		.image{
+			position: absolute;
+			width: 130px;
+			height: 130px;
+			margin-top: 40px;
+			margin-left: 40px; 
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<img class="image" src="https://drive.google.com/thumbnail?id=1Z8SfldhVCOwSsOz5GwetEuzvHdttwrS2&authuser=0&sz=w1263-h881">
+		<div class="h_header"></div>
+		<div class="head"></div>
+		<div class="toy"></div>
+	</div>
+</body>
+</html>

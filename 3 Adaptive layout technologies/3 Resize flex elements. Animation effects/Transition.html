@@ -1,0 +1,80 @@
+	<!DOCTYPE html>
+	<html lang="uk">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Leshchenko</title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+			.main{
+				display: flex;
+				margin-top: 10px;
+			}
+			.photo{
+				height: 300px;
+				box-shadow: 0px 0px 3px 5px gray;
+				flex-basis: 12.5%;
+				transition: flex 0.5s;
+			}
+			.photo:hover{
+				flex: 1 1 400px;
+				transition: flex 1s;
+			}
+			.photo:nth-child(1){
+				background-image: url(http://lorempixel.com/400/300/cats/1);
+			}
+			.photo:nth-child(2){
+				background-image: url(http://lorempixel.com/400/300/cats/2);
+			}
+			.photo:nth-child(3){
+				background-image: url(http://lorempixel.com/400/300/cats/3);
+			}
+			.photo:nth-child(4){
+				background-image: url(http://lorempixel.com/400/300/cats/4);
+			}
+			.photo:nth-child(5){
+				background-image: url(http://lorempixel.com/400/300/cats/5);
+			}
+			.photo:nth-child(6){
+				background-image: url(http://lorempixel.com/400/300/cats/6);
+			}
+			.photo:nth-child(7){
+				background-image: url(http://lorempixel.com/400/300/cats/7);
+			}
+			.photo:nth-child(8){
+				background-image: url(http://lorempixel.com/400/300/cats/8);
+			}
+			@media only screen and (max-width: 500px) {
+				.main{
+					flex-direction: column;
+					align-items: center;
+				}
+				.photo{
+					flex: none;
+					width: 400px;
+					transition: none;
+				}
+				.photo:hover{
+					transition: none;
+				    flex: none;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="photo"></div>
+			<div class="photo"></div>
+			<div class="photo"></div>
+			<div class="photo"></div>
+			<div class="photo"></div>
+			<div class="photo"></div>
+			<div class="photo"></div>
+			<div class="photo"></div>
+		</div>
+	</body>
+	</html>

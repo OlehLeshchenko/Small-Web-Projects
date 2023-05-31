@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Leschenko</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+	<style>
+		body{
+			background: lightblue;
+		}
+		h1{
+			text-align: center;
+			margin: 30px;
+		}
+		.main{
+			margin: 30px;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			width: 800px;
+			margin: auto;
+			margin-top: 10%;
+		}
+		#parag{
+			font-size: 30px;
+			font-weight: bold;
+			text-align: center;
+		}
+		*:focus{
+			box-shadow: blue 0 0 5px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Авіарейси</h1>
+
+	<div class="main">
+		<select id="oppo" onchange="cont()">
+			<option hidden="true" selected=""></option>
+			<option value="Ukraine">Ukraine</option>
+			<option value="Germany">Germany</option>
+			<option value="Spain">Spain</option>
+			<option value="Poland">Poland</option>
+		</select>
+		<input id="pole" list="spisok" placeholder='Уведіть назву міста'>
+		<datalist id="spisok"></datalist>
+		<button type="button" class="btn btn-primary" onclick="look()">Вибрати</button>
+		<button type="button" class="btn btn-primary" onclick="cln()">Очистити</button>
+	</div>
+
+	<br>
+	<p id="parag"></p>
+
+
+	<script>
+		function cont() {
+			document.getElementById('pole').value = '';
+			sp = document.getElementById("spisok");
+			n = sp.options.length;
+			for ( i = n-1; i >= 0; i--) {
+				sp.options[i].remove(); // Видалення елементу зі списку
+			}
+			Ukraine=["Kyiv", "Odesa", "Kharkiv", "Lviv", "Kremenchuk"];
+			Germany=["Berlin", "Magdeburg", "Hamburg", "Stuttgart", "Dortmund"];
+			Spain=["Madrid", "Barcelona", "Seville", "Zaragoza", "Las Palmas"];
+			Poland=["Warsaw", "Kraków", "Wrocław", "Lublin", "Katowice"];
+			var mas = [];
+			if (document.getElementById('oppo').value=="Ukraine") mas=Ukraine;
+			else if (document.getElementById('oppo').value=="Germany") mas=Germany;
+			else if (document.getElementById('oppo').value=="Spain") mas=Spain;
+			else mas=Poland;
+			for (i = 0; i < mas.length; i++) {
+				op = document.createElement('option');
+				op.text = mas[i];
+				spisok.appendChild(op);
+			}
+		}
+
+		function look(){
+			if (document.getElementById('pole').value == "" || document.getElementById('oppo').value == '') {
+				document.getElementById('pole').value = "";
+				alert("Виберіть країну або місто");
+			} else {
+				parag.innerText = document.getElementById('oppo').value + ", " + document.getElementById('pole').value;}
+
+		}
+		function cln(){
+			document.getElementById('pole').value = '';
+			document.getElementById('oppo').value = '';
+			oppo.focus();
+			parag.innerText="";
+		}
+	</script>
+</body>
+</html>

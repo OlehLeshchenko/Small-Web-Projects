@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Пори року</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+	<style type="text/css">
+		body{
+			background-color: #C3FBD8;
+		}
+		h1{
+			text-align: center;
+			margin-bottom: 50px;
+			margin-top: 10px;
+		}
+		.main{
+			width: 70%;
+			margin: auto;
+			display: flex;
+			justify-content: space-around;
+			align-content: space-around;
+			flex-wrap: wrap;
+		}
+		.btn1{
+			font-size: 18px;
+			color: rgba(255, 255, 255, 0.8);
+			margin: 10px;
+			width: 120px;
+			height: 40px;
+		}
+		.btn-warning{
+			color: rgba(0, 0, 0, 0.5);
+		}
+		.black{
+			color: rgba(255, 255, 255, 1);
+		}
+		.white{
+			color: rgba(0, 0, 0, 1);
+		}
+		.oppo{
+			margin-top: 50px;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+		#text{
+			text-align: center;
+			margin-top: 120px;
+			font-size: 35px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Пори року</h1>
+	<div class="main">
+		<div class="dropdown">
+		  <button class="btn btn1 btn-primary dropdown-toggle" id="winter" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+		    Зима
+		  </button>
+		  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+		    <li><a class="dropdown-item" id="winter01" onclick='winter1()' href="#">Грудень</a></li>
+		    <li><a class="dropdown-item" id="winter02"  onclick='winter2()' href="#">Січень</a></li>
+		    <li><a class="dropdown-item" id="winter03"  onclick='winter3()' href="#">Лютий</a></li>
+		  </ul>
+		</div>
+
+		<div class="dropdown">
+		  <button class="btn btn1 btn-success dropdown-toggle" id="spring" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+		    Весна
+		  </button>
+		  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+		    <li><a class="dropdown-item" href="#" onclick='spring1()'>Березень</a></li>
+		    <li><a class="dropdown-item" href="#" onclick='spring2()'>Квітень</a></li>
+		    <li><a class="dropdown-item" href="#" onclick='spring3()'>Травень</a></li>
+		  </ul>
+		</div>
+
+		<div class="dropdown">
+		  <button class="btn btn1 btn-warning dropdown-toggle" id="summer" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+		    Літо
+		  </button>
+		  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+		    <li><a class="dropdown-item" href="#" onclick='summer1()'>Червень</a></li>
+		    <li><a class="dropdown-item" href="#" onclick='summer2()'>Липень</a></li>
+		    <li><a class="dropdown-item" href="#" onclick='summer3()'>Серпень</a></li>
+		  </ul>
+		</div>
+
+		<div class="dropdown">
+		  <button class="btn btn1 btn-danger dropdown-toggle" id="autumn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+		    Осінь
+		  </button>
+		  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+		    <li><a class="dropdown-item" href="#" onclick='autumn1()'>Вересень</a></li>
+		    <li><a class="dropdown-item" href="#" onclick='autumn2()'>Жовтень</a></li>
+		    <li><a class="dropdown-item" href="#" onclick='autumn3()'>Листопад</a></li>
+		  </ul>
+		</div>
+	</div>
+
+	<div class="oppo" style="z-index: 0;"><button style="z-index: 1;" type="button" class="btn btn-info btn-lg" onclick="apul()">Мій місяць</button></div>
+	<p id="text"></p>
+
+	<script>
+		function winter1(){
+			winter.innerText = 'Грудень';
+			winter.classList.add("black");
+			win='Грудень';
+		}
+		function winter2(){
+			winter.innerText = 'Січень';
+			winter.classList.add("black");
+			win='Січень';
+		}
+		function winter3(){
+			winter.innerText = 'Лютий';
+			winter.classList.add("black");
+			win='Лютий';
+		}
+
+		function spring1(){
+			spring.innerText = 'Березень';
+			spring.classList.add("black");
+			spr='Березень';
+		}
+		function spring2(){
+			spring.innerText = 'Квітень';
+			spring.classList.add("black");
+			spr='Квітень';
+		}
+		function spring3(){
+			spring.innerText = 'Травень';
+			spring.classList.add("black");
+			spr='Травень';
+		}
+
+		function autumn1(){
+			autumn.innerText = 'Вересень';
+			autumn.classList.add("black");
+			aut='Вересень';
+		}
+		function autumn2(){
+			autumn.innerText = 'Жовтень';
+			autumn.classList.add("black");
+			aut='Жовтень';
+		}
+		function autumn3(){
+			autumn.innerText = 'Листопад';
+			autumn.classList.add("black");
+			aut='Листопад';
+		}
+
+		function summer1(){
+			summer.innerText = 'Червень';
+			summer.classList.add("white");
+			sum='Червень';
+		}
+		function summer2(){
+			summer.innerText = 'Липень';
+			summer.classList.add("white");
+			sum='Липень';
+		}
+		function summer3(){
+			summer.innerText = 'Серпень';
+			summer.classList.add("white");
+			sum='Серпень';
+		}
+
+		function apul(){
+			try{
+				text.innerHTML = 'Мої улюблені місяці: ' + '<font color="blue" style="font-weight:bold;">'+win+'</font>' + ', ' + '<font color="green" style="font-weight:bold;">'+spr+'</font>' + ', ' + '<font color="#e0dd1b" style="font-weight:bold;">'+sum+'</font>' + ', ' + '<font color="red" style="font-weight:bold;">'+aut+'</font>';
+			}
+			catch(r){
+				alert("Виберіть всі місяці");
+			}
+		}
+	</script>
+</body>
+</html>

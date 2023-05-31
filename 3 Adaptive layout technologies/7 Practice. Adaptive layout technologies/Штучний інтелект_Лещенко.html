@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Штучний інтелект</title>
+	<link rel="shortcut icon" href="https://www.ukrinform.ua/img/favicon.ico">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap');
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Arial', sans-serif;
+		}
+		body{
+			background: #f7f7f7;
+		}
+		.wrapper{
+			color: #333333;
+			max-width: 1080px;
+			width: 85%;
+			min-width: 990px;
+			margin: auto;
+			margin-top: 50px;
+			background-color: white;
+    		overflow: hidden;
+    		margin-bottom: 50px;
+		}
+		.caption{
+			font-family: 'Open Sans', sans-serif;
+    		text-transform: uppercase;
+    		font-weight: bold;
+    		margin-bottom: 20px;
+    		color: #333333;
+    		font-size: 21px;
+		}
+		.date{
+			color: #ed4400;
+			text-align: center;
+			padding: 10px 0 15px 0;
+		}
+		img{
+			width: 200px;
+			height: 134px;
+			display: block;
+			float: left;
+		}
+		.card{
+			width: 630px;
+			margin-bottom: 30px;
+		}
+		.p_text{
+			display: block;
+			width: 418px;
+			height: 200px
+			padding: 10px;
+		}
+		.in_card{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		.grey{
+			color: #666;
+		}
+		.a_left{
+			line-height: 1.5em;
+		}
+		a{
+			text-decoration: none;
+		}
+		a:visited{
+			color: black;
+		}
+		a:active{
+			color: black;
+		}
+		.small-text{
+			display: inline-block;
+			font-size: 14px;
+			margin-top: 0.2em;
+		}
+		.name_news{
+			font-family: 'Open Sans', sans-serif;
+    		text-transform: uppercase;
+    		color: #808282;
+    		font-size: 18px;
+    		font-weight: 500;
+    		margin-top: 60px;
+    		margin-bottom: 5px;
+		}
+		.news{
+			width: 300px;
+			background-color: #f7f7f7;
+			padding-bottom: 20px;
+		}
+		.container{
+			width: 970px;
+			display: flex;
+			justify-content: space-between;
+			padding-top: 40px;
+			margin: auto;
+		}
+		.news_card{
+			width: 250px;
+			margin: auto;
+			padding-top: 20px;
+			font-size: 13px;
+			line-height: 1.5em;
+		}
+		.yellow{
+			color: #e7b100;			
+		}
+		.text_news:hover{
+			color:#3498DB;
+			transition: 0.1s;
+		}
+		.text_news{
+			transition: 0.1s;
+		}
+		.photo{
+			display: inline-block;
+			width: 45px;
+			background-color: rgb(235, 191, 23);
+			font-size: 10px;
+			color: #36312e;
+			letter-spacing: 1px;
+    		height: 19px;
+    		line-height: 19px;
+    		margin: 0 5px;
+    		padding: 0 6px;
+    		font-weight: bold;
+		}
+
+		.video{
+			display: inline-block;
+			width: 48.5px;
+			background-color: rgb(235, 191, 23);
+			font-size: 10px;
+			color: #36312e;
+			letter-spacing: 1px;
+    		height: 19px;
+    		line-height: 19px;
+    		margin: 0 5px;
+    		padding: 0 6px;
+    		font-weight: bold;
+		}
+		.contai{
+    		position: relative;
+    		padding: 30px;
+		}
+		.text1 {
+		    position: absolute;
+		    left: 40%;
+		    top: 29px;
+		    background: #fff;
+		    padding: 0 10px; 
+		}
+		hr{
+			margin-top: 12px;
+			opacity: 0.1;
+		}
+		.main_data{
+			margin-top: -20px;
+		}
+		@media screen and (max-width: 1010px) {
+ 			.wrapper{  
+ 				width: 100%;
+ 				min-width: 850px;
+ 				max-width: none;
+ 			}
+ 			.card{
+				width: 500px;
+			}
+			.p_text{
+				width: 290px;
+			}
+			.container{
+				width: 840px;
+			}
+		}
+		@media screen and (max-width: 840px) {
+ 			.wrapper{ 
+ 				width: 100%;
+ 				min-width: 550px;
+ 				margin: 0;
+				padding: 0;	
+				margin-bottom: 50px;
+ 			}
+ 			.card{
+				width: 690px;
+			}
+			.p_text{
+				width: 478px;
+			}
+			.container{
+				width: 540px;
+				justify-content: center;
+			}
+			.right{
+				display: none;
+			}
+		}
+		@media screen and (max-width: 740px) {
+ 			.wrapper{ 
+ 				width: 100%;
+ 				min-width: 540px;
+ 				margin: 0;
+				padding: 0;
+				margin-bottom: 50px;
+ 				
+ 			}
+ 			.card{
+				width: 520px;
+			}
+			.p_text{
+				width: 306px;
+				padding-right: 0;
+			}
+			.container{
+				width: 540px;
+				justify-content: center;
+				margin: auto;
+			}
+			.right{
+				display: none;
+			}
+		}
+		@media screen and (max-width: 540px) {
+ 			.wrapper{ 
+ 				width: 100%;
+ 				min-width: 466px;
+ 				margin: 0;
+				padding: 0;
+				margin-bottom: 50px;
+ 			}
+ 			.in_card{
+ 				display: flex;
+ 				flex-direction: column;
+ 				align-items: center;
+ 			}
+ 			img{
+ 				width: 437.4px;
+ 				height: 291.6px;
+ 			}
+ 			.card{
+				width: 466px;
+			}
+			.p_text{
+				width: 437.4px;
+				padding-right: 0;
+				margin-top: 3px;
+			}
+			.container{
+				width: 466px;
+				justify-content: center;
+				margin: auto;
+			}
+			.right{
+				display: none;
+			}
+		}
+
+
+	</style>
+</head>
+<body link="black">
+	<div class="wrapper">
+		<div class="container">
+			<div class="left">
+				<h3 class="caption">Штучний інтелект</h3>
+				<div class="card">
+					<div class="main_data"><div class="contai"><hr/><div class="text1 date">16 січня 2021</div></div></div>
+					<div class="in_card">
+						<a href="https://www.ukrinform.ua/rubric-technology/3172366-vikrivluut-cas-i-prostir-stucnij-intelekt-viaviv-ponad-1200-gravitacijnih-linz.html"><img src="https://static.ukrinform.com/photos/2021_01/thumb_files/360_240_1610816395-909.jpg"></a>
+						<div class='p_text'><a class="a_left" href="http://www.ukrinform.ua/rubric-technology/3172366-vikrivluut-cas-i-prostir-stucnij-intelekt-viaviv-ponad-1200-gravitacijnih-linz.html"><span class="int"><span class="grey">19:01</span> Викривлюють час і простір: штучний інтелект виявив 1210 гравітаційних лінз</span></span></a><br>
+						<span class="small-text grey">В університеті Сан-Франциско провели дослідження з використанням алгоритму машинного навчання і успішно виявили 1210 нових гравітаційних лінз — масивних тіл (планет, зірок, галактик), що викривлюють напрямок випромінювання</span></div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="in_card">
+						<a href="https://www.ukrinform.ua/rubric-technology/3172163-facebook-rozrobila-algoritm-akij-moze-peredbaciti-pogirsenna-stanu-covidhvorogo.html"><img src="https://static.ukrinform.com/photos/2020_12/thumb_files/360_240_1607162518-460.jpg"></a>
+						<div class='p_text'><a class="a_left" href="https://www.ukrinform.ua/rubric-technology/3172163-facebook-rozrobila-algoritm-akij-moze-peredbaciti-pogirsenna-stanu-covidhvorogo.html"><span class="int"><span class="grey">14:18</span> Facebook розробив алгоритм, який може передбачити погіршення стану COVID-хворого</span></span></a><br>
+							<span class="small-text grey">Компанія Facebook разом із медичним факультетом Нью-Йоркського університету розробили алгоритм на основі штучного інтелекту, який може передбачити погіршення стану у хворого на коронавірус (COVID-19).</span></div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="main_data"><div class="contai"><hr/><div class="text1 date">16 січня 2021</div></div></div>
+					<div class="in_card">
+						<a href="https://www.ukrinform.ua/rubric-technology/3171155-u-korei-rozrobili-rozumnij-nasijnik-dla-sobak.html"><img src="https://static.ukrinform.com/photos/2021_01/thumb_files/360_240_1610673979-763.jpg"></a>
+						<div class='p_text'><a class="a_left" href="https://www.ukrinform.ua/rubric-technology/3171155-u-korei-rozrobili-rozumnij-nasijnik-dla-sobak.html"><span class="int"><span class="grey">16:00</span> У Кореї розробили «розумний» нашийник для собак</span></span></a><br>
+							<span class="small-text grey">Південнокорейській стартап Petpuls Lab розробив нашийник для собак Petpuls, який має підтримку штучного інтелекту.</span></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="right">
+				<a href="https://www.ukrinform.ua/block-lastnews"><h2 class="name_news">Останні новини</h2></a>
+				<div class="news">
+
+					<a href="http://www.ukrinform.ua/rubric-society/3172642-avaria-sudna-u-cornomu-mori-stali-vidomi-imena-vratovanih-ukrainciv.html"><div class="news_card"><strong><span class="yellow">17:52 </span><span class="text_news">Аварія судна у Чорному морі: стали відомі імена врятованих українців</span></strong></div></a>
+
+					<a href="https://www.ukrinform.ua/rubric-regions/3172640-ucasnikam-viborcoi-karuseli-u-brovarah-zagrozue-do-cotiroh-rokiv.html"><div class="news_card"><span class="grey">17:38 </span><span class="text_news"><div class="photo">ФОТО</div> Учасникам виборчої «каруселі» у Броварах загрожує до чотирьох років</span></div></a>
+
+					<a href="https://www.ukrinform.ua/rubric-world/3172638-britania-planue-vakcinuvati-vsih-doroslih-do-veresna.html"><div class="news_card"><span class="grey">17:35 </span><span class="text_news">Британія планує вакцинувати всіх дорослих до вересня</span></div></a>
+
+					<a href="https://www.ukrinform.ua/rubric-society/3172636-u-tureccini-trivae-operacia-poratunku-morakiv-u-likarni-5-ukrainciv-posol.html"><div class="news_card"><span class="grey">17:15 </span><span class="text_news">У Туреччині триває операція порятунку моряків із затонулого судна, у лікарні 5 українців</span></div></a>
+
+					<a href="https://www.ukrinform.ua/rubric-kyiv/3172634-u-kievi-plavlat-snig-kanadski-masini.html"><div class="news_card"><span class="grey">17:07 </span><span class="text_news"><div class="video">ВІДЕО</div> У Києві «плавлять» сніг канадські машини</span></div></a>
+
+					<a href="https://www.ukrinform.ua/rubric-world/3172631-navalnij-z-druzinou-siv-u-litak-na-rejs-do-moskvi.html"><div class="news_card"><span class="grey">16:55 </span><span class="text_news"><div class="video">ВІДЕО</div> Навальний з дружиною сів у літак на рейс до Москви</span></div></a>
+
+					<a href="https://www.ukrinform.ua/rubric-society/3172624-na-bortu-zatonulogo-bila-beregiv-tureccini-sudna-bulo-10-ukrainciv-mzs.html"><div class="news_card"><strong><span class="yellow">16:39 </span><span class="text_news">На борту затонулого біля берегів Туреччини судна було 10 українців – МЗС</span></strong></div></a>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

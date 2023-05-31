@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Leshchenko</title>
+	<style>
+		.l, input{
+			width: 150px;
+			height: 30px;
+			font-size: 20px;
+		}
+		.square{
+			width: 200px;
+			height: 200px;
+			margin: 20px;
+			margin: auto;
+			border: 1px solid;
+		}
+	</style>
+</head>
+<body>
+	<div style="margin:  auto; margin-top: 50px; width: 300px; border: 1px solid; border-radius: 10%; padding: 40px;">
+		<label style="font-size: 20px;">Кольори фону:</label>
+		<select name="bg" class="l" onchange="change()" id="back">
+			<option value="white">White</option>
+			<option value="lightgreen">LightGreen</option>
+			<option value="pink">Pink</option>
+			<option value="lightblue">LightBlue</option>
+		</select>
+	</div>
+	<div style="margin:  auto; margin-top: 50px; width: 400px; border: 1px solid; border-radius: 10%; padding: 40px;">
+		<label style="font-size: 20px;">Кольори тексту:</label>
+		<input list="clrTxt" placeholder='Уведіть назву кольору' id="inpt" style="width: 250px;">
+		<datalist id="clrTxt">
+			<option>Black</option>
+			<option>DarkRed</option>
+			<option>DarkBlue</option>
+			<option>DarkGreen</option>
+		</datalist>
+		<p id="texts" style="text-align: center; font-weight: bold; font-size: 20px;">Лещенко Олег</p>
+		<button style="margin-left: 150px; padding: 5px;" onclick="but()">Змінити колір</button>
+	</div>
+	<div style="margin:  auto; margin-top: 50px; width: 900px; border: 1px solid; border-radius: 10%; padding: 40px;">
+		<label style="font-size: 20px;">Зображення фону:</label>
+		<select name="imm" class="l" onchange="imch()" id="im">
+			<option value=" ">Nothing</option>
+			<option value="url(https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/200px-Cat03.jpg)">Cat</option>
+			<option value="url(https://awscape.org.za/wp-content/uploads/2018/05/dog-200x200.jpg)">Dog</option>
+			<option value="url(https://marinemagic.co.za/wp-content/uploads/2017/01/clown-fish-200x200.jpg)">Fish</option>
+		</select>
+		<div id="kv" class="square"></div>
+	</div>
+	<script>
+		function change() {
+			document.body.style.backgroundColor = document.getElementById('back').value;
+		}
+		function but(){
+			document.getElementById('texts').style.color = document.getElementById('inpt').value;
+		}
+		function imch(){
+			kv.style.backgroundImage = document.getElementById('im').value;
+		}
+	</script>
+</body>
+</html>

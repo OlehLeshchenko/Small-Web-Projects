@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Leschenko</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<style type="text/css">
+		body{
+			background: #E7ECFF; 
+		}
+		h1{
+			display: block;
+		}
+		.text{
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+		}
+		form{
+			display: flex;
+			flex-direction: column;
+			width: 400px;
+			margin: auto;
+		}
+		button{
+			display: block;
+			width: 140px;
+			padding: 6px;
+			font-weight: bold;
+			font-size: 18px;
+			margin-top: 20px;
+			margin: auto;
+		}
+		.active{
+			text-align: center;
+			font-weight: bold;
+		}
+		.main{
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="text"><h1>Опитування для вступу до ліцею</h1></div>
+	<div class="main">
+		<form name="frm">
+			<ul class="list-group">
+	  			<li class="list-group-item active" aria-current="true">Введіть свої дані</li>
+				<li class="list-group-item">Ім'я: <input name="name" required></li>
+				<li class="list-group-item">Прізвище: <input name="lastname" required></li>
+				<li class="list-group-item">Дата народження: <input type="date" name="date" required></li>
+				<li class="list-group-item">Оцінка з математики: <input name="math" required></li>
+				<li class="list-group-item">Оцінка з укр.мови: <input name="lang" required></li>
+				<li class="list-group-item"><label>Cтать: </label>
+				<input type="radio" name="sex" value="Жіноча" checked> Жіноча 
+				<input type="radio" name="sex" value="Чоловіча"> Чоловіча</li>
+				<li class="list-group-item">Місце проживання: <input type="checkbox" name="city" id="city"> Мешканець міста</li>
+			</ul><br>
+			<button onclick='go()'>Надіслати</button>
+		</form>
+	</div>
+
+	<script>
+		var chbox;
+		chbox=document.getElementById('city');
+		if (chbox.checked) {
+				city="Мешканець міста";
+			}
+		else {
+				city="Не є мешканцем міста";
+			}
+
+		function go(){
+			var x = Number(frm.math.value) + Number(frm.lang.value);
+			dat = frm.date.value.substr(8, 2) + '.' + frm.date.value.substr(5, 2) + '.' + frm.date.value.substr(0, 4);
+			alert("Ім'я: " + frm.name.value + '\nПрізвище: ' + frm.lastname.value + '\nДата народження: ' + dat + '\nCума оцінок математики та укр.мови: ' + x + "\nCтать: " + frm.sex.value + "\nМісце проживання: " + city);
+			
+		}
+	</script>
+</body>
+</html>

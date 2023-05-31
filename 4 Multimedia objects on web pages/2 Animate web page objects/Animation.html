@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Animation_Leshchenko</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body{
+			background: #fff2a3;
+		}
+		.all{
+			height: 80vh;
+			min-height: 300px;
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			margin-top: -10vh;
+		}
+		.conta{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 40%;
+			min-width: 300px;
+			height: 400px;
+			transform: scale(1.2);
+		}
+		.icecream_form{
+		    position: relative;
+		    width: 190px;
+		    height: 260px;
+		    border-radius: 90px 90px 10px 10px;
+		    overflow: hidden;
+
+		}
+		.icecream_form:after{
+		    content: '';
+		    position: absolute;
+		    left: 21px;
+		    bottom: 20px;
+		    width: 20px;
+		    height: 170px;
+		    border-radius: 50px;
+		    background: rgba(255, 255, 255, 0.5);
+		}
+		.icecream_filling{
+			position: relative;
+		    top: 0%;
+		    left: -20%;
+		    width: 140%;
+		    height: 120%;
+		    background-image: linear-gradient(0deg,#BB5CFF 25%,#37BCDB 25%,#37BCDB 25%,#37BCDB 50%,#FA3C69 50%,#FA3C69 50%,#FA3C69 75%,#97F067 75%);
+		    background-repeat: repeat-y;
+		    animation: icecream 1.5s linear infinite;
+		    animation-direction: normal;
+		    transform: rotate(155deg);
+		}
+		.icecream_stick{
+		    width: 57px;
+		    height: 86px;
+		    background: #e7aa75;
+		    border-radius: 0 0 25px 25px;
+		    display: block;
+		    margin: 0 auto;
+		}
+		.icecream_stick:after{
+		    display: block;
+		    content: '';
+		    width: 100%;
+		    height: 24px;
+		    background: #de863a;
+		  }
+		@keyframes icecream{
+			from{
+		        background-position: 0;
+		    }	
+		    to {
+		        background-position: 0 -310px;
+		    }		  
+		}
+		.radiobuttons_rt{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 40%;
+			min-width: 300px;
+			height: 400px;
+			font-weight: bold;
+			transform: scale(1.4);
+		}
+		.radiobuttons_item{
+			position: relative;
+			padding: 0 0 0 45px;
+			line-height: 30px;
+			font-size: 16px;
+			color: #b2b2b2;
+			margin-bottom: 30px;
+			cursor: pointer;
+
+			transition: all 0.3s ease 0s;
+		}
+		.radiobuttons_item:after{
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			left: 5px;
+			top: 5px;
+			background-color: #4fbb65;
+			border-radius: 50%;
+			box-shadow: 0 0 3px rgba( 0, 0, 0, 0.3);
+			content: "";
+			transform: scale(0);
+
+			transition: all 0.3s ease 0s;
+		}
+		.radiobuttons_item:before{
+			content: "";
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background-color: #bfc0c4;
+			border-radius: 50%;
+			box-shadow: 0 0 3px rgba( 0, 0, 0, 0.3);
+		}
+		.radiobuttons_item input{
+			display: none;
+		}
+		.radiobuttons_item.active{
+			color: #000;
+		}
+		.radiobuttons_item.active:after{
+			transform: scale(1);
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapp">
+		<div style="height: 20vh; display: flex; justify-content: center; align-items: center;min-height: 100px;">
+			<h1 style="margin: 0 20px; text-align: center; margin-top: 20px; margin-bottom: 40px;">Демонстрація властивості animation-direction</h1>
+		</div>
+
+		<div class="all">
+
+			<div class="radiobuttons_rt"><div class="radiobuttons">
+
+				<div class="radiobuttons_item radio1">
+					animation-direction: normal;
+					<input type="radio" value="1" name="nameradio" checked>
+				</div>
+
+				<div class="radiobuttons_item radio2">
+					animation-direction: reverse;
+					<input type="radio" value="2" name="nameradio">
+				</div>
+
+				<div class="radiobuttons_item radio3">
+					animation-direction: alternate;
+					<input type="radio" value="3" name="nameradio">
+				</div>
+
+				<div class="radiobuttons_item radio4">
+					animation-direction: alternate-reverse;
+					<input type="radio" value="4" name="nameradio">
+				</div>
+
+			</div></div>
+
+			<div class="conta">
+				<div class="icecream">
+					<div class="icecream_form">
+						<div class="icecream_filling"></div>
+					</div>
+					<div class="icecream_stick"></div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function() {
+
+			$.each($(".radiobuttons_item"), function(index, val) {
+				if($(this).find("input").prop("checked")==true) {
+					$(this).addClass("active");
+				}
+			});
+
+
+			$(document).on("click", ".radiobuttons_item", function(event) {
+				$(this).parents('.radiobuttons').find('.radiobuttons_item').removeClass('active');
+				$(this). parents('.radiobuttons').find('.radiobuttons_item input').prop("checked", false);
+				$(this).toggleClass('active');
+				$(this).find("input").prop("checked", true);
+				return false;
+				});
+
+			$(".radio1").click(function(){
+				$(".icecream_filling").css("animation-direction","normal");
+			});
+			$(".radio2").click(function(){
+				$(".icecream_filling").css("animation-direction","reverse");
+			});
+			$(".radio3").click(function(){
+				$(".icecream_filling").css("animation-direction","alternate");
+			});
+			$(".radio4").click(function(){
+				$(".icecream_filling").css("animation-direction","alternate-reverse");
+			});
+
+
+		})
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Адаптивний дизайн</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+		}
+		header{
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+		hr {
+            box-shadow: 0px 0px 4px 1px blue;
+         }
+         img{
+         	margin-bottom: 10px;
+         }
+		.ul{
+			list-style: none;
+			display: flex;
+			justify-content: space-around;
+		}
+		a{  
+			text-decoration: none;
+			display: block;
+			color:gray;
+			background-color: #E8E8E8;
+			border: 1px solid gray;
+			padding: 6px;
+			margin: 10px;
+			transition: background-color 1s;
+		}
+		a:hover{
+			color:white;
+			background-color: #008B8B;
+			transition: background-color 1s;
+
+		}
+		@media only screen and (max-width: 1050px) {
+			header{
+				flex-direction: column;
+			}
+			.phone{
+				margin-bottom: 12px;
+			}
+			 img{
+         	margin-bottom: 0px;
+         	}
+		}
+		@media only screen and (max-width: 600px) {
+			header{
+				flex-direction: column;
+			}
+			.ul{
+				flex-direction: column;
+			}
+			.phone{
+				margin-bottom: 12px;
+			}
+			 img{
+         	margin-bottom: 0px;
+        	}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<img style="" src="https://lh3.googleusercontent.com/fife/ABSRlIo2Xt98PV0wtKoXg9UGHeVz6TgDNugmDwK4ww13-iDk8YrF9HIb7BizYQ_iJvKm4IPf3p5XXmPnl165OiI7W4KPhDT8pN899pCQobKwAL7ePVRUPdamS_cLwZFOpBrU0jcGewJn2WsOFQccvX56p-gN9YDGxxKr5_pXak9G-NKlfkiUA86hp2JnVLySkQTlqiF92_VTe0O52l_YmBnF-IWqLF8_iA0UiCUxJYHYXVU7_1c-TRqPFBB5Q3_U-k-lt34b-h4pQD5g2aYPWotzrb-6x5Zdc-bhB9RhMh17MeEFHobQwNAjmULEoIOYGAAEzSQmMN8IFyMQI5sUTrbEhfX-CD2xvyFRvnLbmzEQkVJ473wyBjmc1rzQ5IYi0CAlo8rTsfrZA4-7ViVi3N6UH-UiEYv1p-0CHhRlgipQ3YtgvyuXiCoup90gCxSaU-UmWrbJr4SxHryvPTtX20j-7DSqsvLuEiersQIYGobpA1vUsVMAyOX2lZzEMV6S3cmn6wtr8laatIJBaj8Z0XQ1l0hJN-IMutM2yfYqWra0kqKz_2pp3OhB4csI8dTKj8HPwa7KnzFWGZ1C1KqF69iQ1CaP6tySlWM46Cpat-4b1ohAlqsq_oRKVpUwKu7Z43yk8zzRpXWI1DT9A3fGCfNxUG7O9QUtU_hL1WAOT-cuzZt8BoN4d_cGhPNegq0r7mOiyG0h-T1bzLcvDXBgl76wcKrTnDmg=w1349-h657-ft">
+		<div class="ul">
+			<div><a href="">Ліцей сьогодні</a></div>
+			<div><a href="">Вступнику</a></div>
+			<div><a href="">Ліцеїсту</a></div>
+			<div><a href="">Гуртки</a></div>
+			<div><a href="">Як нас знайти</a></div>
+		</div>
+		<div class="phone">&#9742; +380536-758470</div>
+	</header>
+	<hr>
+</body>
+</html>

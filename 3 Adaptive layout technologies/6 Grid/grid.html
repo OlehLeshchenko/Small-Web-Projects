@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Сітка Grid</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body{
+			display: grid;
+			grid-template-columns: 50% repeat(2,1fr);
+			grid-auto-rows: 75px 1fr;
+			grid-column-gap: 8px;
+			grid-row-gap: 8px;
+		}
+		.one{
+			grid-row: 1/3;
+			grid-column: 1;
+			background-color: rgb(204, 204, 204);
+		}
+		.two-one{
+			grid-column: 2/3;
+		}
+		.two-two{
+			grid-column: 3/4;	
+		}
+		.two-third{
+			grid-row: 2/3;
+			grid-column: 2/3;
+			background-color: rgb(0, 153, 153);
+		}
+		.two-fourth{
+			grid-row: 2/3;
+			grid-column: 3/4;
+			background-color: rgb(0, 153, 153);
+		}
+		.cont-1{
+			grid-row: 1/2;
+			background-color: rgb(0, 204, 204);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		a{
+			font-size: 26px;
+			color: #001eec;
+			font-weight: bold;
+		}
+		.cont-2{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 75px;
+			font-size: 25px;
+			font-weight: bold;
+		}
+		.cont-2-1{
+			padding: 0 10px 0 10px;
+			text-align: justify;
+		}
+		img{
+			display: block;
+			height: 172.8px;
+			width: 240px;
+			float: left;
+		}
+		p{
+			text-align: justify;
+			padding: 0 10px 0 10px;
+		}
+		.button{
+			width: 100%;
+			display: grid;
+			grid-template-columns: 1fr 100px 20px;
+			grid-row: 1fr;
+			margin: 20px 0;
+		}
+		button{
+			grid-row: 1;
+			grid-column: 2/3;
+			padding: 3px 5px 3px 5px;
+		}
+		@media screen and (max-width: 750px){
+			body{
+				display: grid;
+				grid-template-columns: repeat(2,1fr);
+				grid-auto-rows: 75px 1fr repeat(2,1fr);
+				grid-column-gap: 8px;
+				grid-row-gap: 8px;
+				grid-auto-rows: minmax(100px, auto);
+			}
+			.two-one{
+				grid-column: 1/2;
+			}
+			.two-two{
+				grid-column: 2/3;
+			}
+			.one{
+				grid-column: 1/3;
+				grid-row: 2/3;
+			}
+			.two-third{
+				grid-column: 1/3;
+				grid-row: 3/4;
+			}
+			.two-fourth{
+				grid-column: 1/3;
+				grid-row: 4/5;
+			}
+			.cont-2{
+				margin-bottom: 10px;	
+			}
+			.cont-2-1{
+				margin-bottom: 10px;
+			}
+		}
+	</style>
+</head>
+<body>
+		<div class="one">
+			<div class="cont-2">
+				<div>Основна стаття</div>
+			</div>
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Water_molecule.svg/1200px-Water_molecule.svg.png">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quo fuga repellendus dolorum expedita praesentium iure autem cupiditate pariatur eveniet ullam beatae nostrum amet delectus, quidem tenetur sapiente? Quia, tenetur.</p>
+			<br>
+			<p>Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Veniam exercitationem, aliquid. Tenetur asperiores reprehenderit recusandae nesciunt, incidunt ea labore quae, quod placeat expedita, ipsam maiores animi vero exercitationem nostrum facilis?</p>
+			<br>
+			<p>Lorem ipsum dolor, sit amet consectetur adipisicing, elit. Ex fugiat dignissimos nostrum esse doloremque amet! Quam, aliquid? Animi tempora modi vero architecto, cum, ab autem. Animi quo ratione nemo laborum.</p>
+			<div class="button"><button>Read more ></button></div>
+		</div>
+
+		<div class="two-one cont-1"><div><a href="">Головна</a></div></div>
+		<div class="two-two cont-1"><div><a href="">Новини</a></div></div>
+
+		<div class="two-third">
+			<div class="cont-2">
+				<div style="text-align: center;">Довідкова стаття</div>
+			</div>
+			<div class="cont-2-1">Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Vitae ea, illo sapiente dignissimos rem doloribus inventore molestiae ratione quia odio minima atque quae consequuntur fugiat dicta eligendi asperiores facere aspernatur?</div>
+		</div>
+		<div class="two-fourth">
+			<div class="cont-2">
+				<div style="text-align: center;">Корисні джерела</div>
+			</div>
+				<div class="cont-2-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio repellendus enim quis cupiditate totam ipsum eius reiciendis commodi optio quaerat in sapiente, sed. Enim delectus dolorem, assumenda corrupti quas eius!</div>
+		</div>
+</body>
+</html>

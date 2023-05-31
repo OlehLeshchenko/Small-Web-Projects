@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Leshchenko</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body {
+			background: linear-gradient(68deg, #C7C5A7 0.9em, rgba(255, 255, 255, 0) 0.99em) 3em -3em, linear-gradient(-68deg, #C7C5A7 0.9em, rgba(255, 255, 255, 0) 0.99em) -3em -3em, radial-gradient(circle, #C7C5A7 0.9em, rgba(255, 255, 255, 0) 0.99em) 0 0, linear-gradient(68deg, #8BA88F 0.9em, rgba(255, 255, 255, 0) 0.99em) 0 0, linear-gradient(-68deg, #8BA88F 0.9em, rgba(255, 255, 255, 0) 0.99em) 0 0, radial-gradient(circle, #8BA88F 0.9em, rgba(255, 255, 255, 0) 0.99em) 3em 3em;
+			background-size: 6em 6em;
+			background-color: #F0DFD0;
+			background-repeat: repeat;
+			font: 14px/2 'Trebuchet MS', Verdana, sans-serif;
+
+		}
+		#bg-img {
+			background: url(background.jpg);
+			background-position: center center;
+			background-size: cover;
+			width: 100%;
+			height: 100vh;
+			filter: contrast(5);
+			margin-bottom: -20px;
+			z-index: 0;
+			background-color: rgba(0,0,0,0.27);
+			transition: 1.5s;
+		}
+		.main{
+			position: absolute;
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		    z-index: 1;
+		}
+		.d39 {
+			position: absolute;
+			border-radius: 50% 50% 0 0;
+			height: 400px;
+			width: 400px;
+			z-index: 2;
+			background-color: #91a1c4;
+			margin-left: 50px;
+			text-align: center;
+			padding-top: 200px;
+			transition: 1.5s;
+		}
+		.d39:before, 
+		.d39:after {
+			content: "";
+			position: absolute; 
+			bottom: -0.01em;
+			background: inherit;
+		}
+		.d39:before {
+			left: 80%; 
+			width: 60%; 
+			height: 60%;
+			border-left: none;
+			border-radius: 50% 50% 50% 0;
+		}
+		.d39:after {
+			right: 80%;
+			width: 80%; 
+			height: 80%;
+			border-right: none;
+			border-radius: 50% 50% 0;
+		}
+		.ad{
+			z-index: 4;
+			font-size: 45px;
+			padding-top: 100px;
+			width: 600px;
+			text-align: center;
+		}
+		.ad:before{
+			content: "\1F645";
+		}
+		.ad:after{
+			content: 'Скажи насиллю "НІ"';
+    		animation-name: bulling;
+    		animation-duration: 6s;
+			animation-iteration-count: infinite;
+		}
+		@keyframes bulling{ 
+    		0%{
+                content: ' Скажи насиллю "НІ"';
+    		}
+    		33%{
+                content: ' Скажи насиллю "НІ"';
+    		}
+    		34%{
+                  content: " Прийми руку допомоги (0 800 500 225)"
+    		}
+    		66%{
+                 content: " Прийми руку допомоги (0 800 500 225)"
+    		} 
+    		67%{
+                  content: " Не вдавай, що не бачиш!"
+    		}
+    		100%{
+                 content: " Не вдавай, що не бачиш!"
+    		}
+
+    	}
+    	i{	display: block;
+    		position: absolute;
+    		z-index: 4;
+			font-size: 70px;
+			text-align: center;
+			margin-top: -50px;
+    	}
+    	i::before {
+  			content: "\f410";
+  			animation-name: emj;
+    		animation-duration: 6s;
+			animation-iteration-count: infinite;
+  		}
+		@keyframes emj {
+		 	0%{
+                content: '\f410'
+    		}
+    		33%{
+                content: '\f410';
+    		}
+    		34%{  
+                  content: "\f2b5"
+    		}
+    		66%{
+    			
+                 content: "\f2b5"
+    		} 
+    		67%{ 
+                  content: "\f070"
+    		}
+    		100%{
+    			
+                 content: "\f070"
+    		}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="all" style="display: flex;justify-content: center;align-items: center; margin-top: -50px;">
+			<div class="d39"></div>
+			<div class="ad"></div><br>
+			<i class="far fa-hand-paper"></i>
+		</div>
+	</div>
+
+	<canvas id="bg-img"></canvas>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+	<script>
+		var n = 500,
+		c = document.getElementById("bg-img"),
+		ctx = c.getContext("2d"),
+		cw = (c.width = c.offsetWidth);
+		ch = (c.height = 500);
+		duration = ch/850,    
+		img = new Image(),
+		particles = [],
+		particleNumber = 0,
+		Particle = function() {
+		    this.alpha = rand(0.1, 0.4);
+		    this.size = rand(60, 70);
+		    this.draw = function() {
+		        ctx.globalAlpha = this.alpha;
+		        ctx.drawImage(img, this.x, this.y, this.size, this.size);
+		    }
+		};
+		function setParticle(p) {
+		    particleNumber++;
+		    var _dur = rand(duration/2, duration),
+		    _tl = new TimelineMax()
+		    .fromTo(p, _dur, {
+		        x:rand(-p.size, cw+ch/2),
+		        y:-p.size
+		        },{
+		        x:'-='+rand(ch/2-50,ch/2), 
+		        y:ch+p.size,
+		        ease:Power0.easeNone,
+		        onComplete:function(){ setParticle(p); }
+		    });
+		    if (particleNumber<n) _tl.seek(_dur*rand());
+		}
+		for (var i=0; i<n; i++) {
+		    particles.push(new Particle());
+		    setParticle(particles[i]);      
+		}
+		TweenMax.ticker.addEventListener("tick", function(){
+		    ctx.clearRect(0, 0, cw, ch);
+		    for (var i=0; i<n; i++) {
+		        particles[i].draw();
+		    }
+		});
+		window.addEventListener('resize', function() {
+		    particleNumber = 0;  
+		    cw = (c.width = c.offsetWidth);
+		    ch = (c.height = 500);
+		    for (var i=0; i<n; i++) {
+		        TweenMax.killTweensOf(particles[i]);
+		        setParticle(particles[i]);
+		    }
+		});
+		function rand(min=0, max=1) {
+		    return min + (max-min)*Math.random();
+		}
+		img.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAABECAMAAAAPzWOAAAAAclBMVEVHcEz///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9wvwjfAAAAJnRSTlMADzQ3BxsfAQIKBBYFX5UsEjxPan6QJ0NJJCkUcXgvhVRZSkCKZM5koNQAAAFNSURBVHgB3ZWFkcRADARvUVozM9uXf4p/GTyMil4BTLnHvdLrN0OJfcHDs8JD7BTgDCq2CKfxHeE0W4zTzBqvJOomhkOCdgTTxEaCJv9HNCxAQzI0pcS/2URo8FqdsQIf4vFanYQkuYDythSgKYYCpxkHK0CjWYDGE658r3DT+i3Bla8cTJOYHtdVVbiuPB749Uz6AaYhdRrCH3A64spfp8IlSXsBSeqO4FqrN04z1pXFN8mqI/h4nouHaaYlhbdruJveojQuXTeGlV9rz6gk134oAkN83ZQBDLGmWToLhrhzTx1YSZQv+zBjITRX+6oDoba29QRWoq4nS32CNTLW2YNWEu49Ww2mWuTfWZuClgTTZO3hoEo4Ptp2KQuoEqubD80EWUJFmmVP5aFK2NVZ25RFBJ6bZj18YHAx3qULTOhWm+GMzzCe8ZmfZ3wBUXcSquSL1HAAAAAASUVORK5CYII=";
+	</script>
+	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script>
+	$( document ).ready(function(){
+
+	  $( ".d39, .ad, i" ).hover(function(){
+	    $( ".d39" ).css( "background", "white" ) 
+	    $( "#bg-img" ).css( "opacity", "0" )
+	    $( "i" ).css( "animation-name", "emj_1" )
+
+
+	  });
+
+	  $( ".all" ).hover(function(){
+	    $( ".d39" ).css( "background", "#91a1c4" ) 
+	    $( "#bg-img" ).css( "opacity", "1" )
+	  });
+
+
+	});
+		</script>
+</body>
+</html>

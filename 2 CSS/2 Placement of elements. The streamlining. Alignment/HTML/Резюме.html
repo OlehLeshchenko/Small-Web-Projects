@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Резюме автора</title>
+	<link rel="stylesheet" type="text/css" href="../CSS/style.css">
+	<style type="text/css">
+		 dt{
+		 	color:#FF7F50;
+		 	font-weight: bold;
+		 }
+
+		 dd, .w{
+		 	font-style: italic;
+		 }
+
+		 .dt{
+
+		 	font-style: oblique;
+		 	color: #7a71b6;
+		 }
+	</style>
+</head>
+<body>
+	<div class="cont1">
+		<div><a class='nav_link' href="../index.html">Головна</a></div>
+		<div><a class='nav_link' href="Мореплавці.html">Визначні мореплавці</a></div>
+		<div><a class='nav_link' href="Наука ХХІ століття.html">Наука ХХІ століття</a></div>
+		<div><a class='nav_link'href="Рейтинг мов програмування.html">Рейтинг мов програмування</a></div>
+		<div><a class='nav_link'href="Наукові інтереси.html">Наукові інтереси</a></div>
+	</div>
+	<h1 style="text-align: center;">Резюме</h1>
+	<dl>
+		<dt>Призвіще</dt>
+		<dd>Лещенко</dd>
+		<dt>Ім'я</dt>
+		<dd>Олег</dd>
+		<dt>По батькові</dt>
+		<dd>Сергійович</dd>
+		<dt>Дата народження</dt>
+		<dd>21.03.2005</dd>
+		<dt>Місця навчання</dt>
+		<ol class="w">
+			<li>Дитячий садок №X</li>
+			<li>Гімназія №x</li>
+			<li>Ліцей "Політ"</li>
+		</ol>
+		<dt>Найбільш успішні предмети</dt>
+		<ul  class="w">
+			<li>Інформатика</li>
+			<li>Програмування</li>
+			<li>Англійська мова</li>
+		</ul>
+		<dt>Адрес</dt>
+		<dd>вул. X Y </dd>
+		<dt>Контактний телефон</dt>
+		<dd>+380xxxxxxxxx</dd>
+		<dt>Акаунти у соцмережах</dt>
+		<dd>
+			<dl> 
+				<dt class="dt">Instagram</dt>
+				<dd>@xxx</dd>
+				<dt class="dt">Telegram</dt>
+				<dd>@xxx</dd>
+				<dt class="dt">Viber</dt>
+				<dd>+380xxxxxxxxx</dd>
+			</dl>
+		</dd>
+	</dl>
+	<button id="ButUp" class="b_top" onclick="location.href='#top'">&#129065;</button>
+	<script type="text/javascript">
+		window.onscroll = function(){scroll()}
+		function scroll(){
+			if (document.body.scrollTop > 300 || document.documentElement.scrollTop >300){
+				document.getElementById('ButUp').style.display = "block"}
+			else{document.getElementById('ButUp').style.display = "none"}
+		}
+	</script>
+</body>
+</html>

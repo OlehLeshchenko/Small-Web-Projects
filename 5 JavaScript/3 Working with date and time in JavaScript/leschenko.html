@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Leshchenko</title>
+	<style>
+		*{
+			font-size: 30px;
+		}
+		div{
+			width: 400px;
+			text-align: center;
+			margin: auto;
+			margin-top: 100px;
+		}
+	</style>
+</head>
+<body onload="main()">
+	<div>
+		<p id="dat"></p>
+		<p id="time"></p>
+		<p id="celeb"></p>
+	</div>
+	<script>
+		function main() {
+			var dt = new Date();
+			h = dt.getHours();
+			m = dt.getMinutes();
+			s = dt.getSeconds();
+			y = dt.getFullYear(); 
+			mo = dt.getMonth() + 1; 
+			d = dt.getDate();
+			if (m < 10) m = "0" + m;
+			if (s < 10) s = "0" + s;
+			if (mo < 10) mo = "0" + mo;
+			if (d < 10) d = "0" + d;
+			dat.innerText = d + "." + mo + "." + y + " p.";
+			time.innerText = h + ":" + m + ":" + s;
+			if (h >= 22 && h < 5) celeb.innerHTML = '<font color="darkblue">Доброї ночі</font>';
+			if (h >= 17 && h < 22 ) celeb.innerHTML = '<font color="lightblue">Доброго вечора</font>';
+			if (h >= 12 && h <= 16) celeb.innerHTML = '<font color="lightred">Доброго дня</font>';
+			if (h >= 5 && h < 12) celeb.innerHTML = '<font color="lightgreen">Доброго ранку</font>';
+			setTimeout("main()",1000);
+		}
+	</script>
+</body>
+</html>
